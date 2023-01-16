@@ -1,21 +1,19 @@
-# React App
+# Retro Game Index Web App
 
-## Get Started
-
-### Local Development
+## Local Development
 
 ```
 cp .env.example .env
-pnpm install
-pnpm start
+npm install
+npm start
 ```
 
-### Production Deployment
+## Production Deployment
 
 ```
 cp .env.example .env
-pnpm install
-pnpm build
+npm install
+npm run build
 ```
 
 ## Technology Stack

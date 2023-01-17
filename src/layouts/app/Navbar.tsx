@@ -107,7 +107,7 @@ export default function Navbar() {
 
   return (
     <>
-      <AppBar position="static" color="inherit">
+      <AppBar position="sticky" color="inherit">
         <Toolbar>
           <Link to="/" style={{ display: 'flex', textDecoration: 'none', color: 'inherit' }}>
             <Box component="img" src="/logo.svg" width={64} height={64} sx={{ height: 48, m: -1, mr: 0 }} />

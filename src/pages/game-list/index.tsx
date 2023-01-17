@@ -10,9 +10,12 @@ export default function GameList() {
   const { t } = useTranslation();
   const [page, setPage] = useState(1);
   const [noBoxartImage, setNoBoxartImage] = useState(false);
-  const { data } = useSWR<PaginatedResult<Game>>(`games?page=${page}${noBoxartImage ? '&noBoxartImage=1' : ''}`, {
-    refreshInterval: 0,
-  });
+  const { data } = useSWR<PaginatedResult<Game>>(
+    `games?page=${page}${noBoxartImage ? '&noBoxartImage=1' : ''}`,
+    {
+      refreshInterval: 0,
+    }
+  );
 
   const handlePageChange = (e: ChangeEvent<unknown>, value: number) => {
     setPage(value);

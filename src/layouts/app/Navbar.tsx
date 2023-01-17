@@ -4,7 +4,17 @@ import {
   MoreVert as MoreIcon,
   Notifications as NotificationsIcon,
 } from '@mui/icons-material';
-import { AppBar, Badge, Box, Button, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
+import {
+  AppBar,
+  Badge,
+  Box,
+  Button,
+  IconButton,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
+} from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
@@ -110,7 +120,13 @@ export default function Navbar() {
       <AppBar position="sticky" color="inherit">
         <Toolbar>
           <Link to="/" style={{ display: 'flex', textDecoration: 'none', color: 'inherit' }}>
-            <Box component="img" src="/logo.svg" width={64} height={64} sx={{ height: 48, m: -1, mr: 0 }} />
+            <Box
+              component="img"
+              src="/logo.svg"
+              width={64}
+              height={64}
+              sx={{ height: 48, m: -1, mr: 0 }}
+            />
             <Typography variant="h6" noWrap component="div">
               {import.meta.env.VITE_APP_NAME}
             </Typography>

@@ -15,5 +15,9 @@ export default function AuthProvider({ children }: AuthProviderProps) {
     // TODO: check auth status
   }, []);
 
-  return <AuthContext.Provider value={{ status, setStatus, user, setUser }}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={{ status, setStatus, user, setUser }}>
+      {children}
+    </AuthContext.Provider>
+  );
 }

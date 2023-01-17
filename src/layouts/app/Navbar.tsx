@@ -1,16 +1,18 @@
 import {
   AccountCircle,
   Mail as MailIcon,
-  Menu as MenuIcon,
   MoreVert as MoreIcon,
   Notifications as NotificationsIcon,
 } from '@mui/icons-material';
-import { AppBar, Badge, Box, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
+import { AppBar, Badge, Box, Button, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import LanguageMenu from '../../components/LanguageMenu';
 import SearchBox from './SearchBox';
 
 export default function Navbar() {
+  const { t } = useTranslation();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -107,14 +109,23 @@ export default function Navbar() {
     <>
       <AppBar position="static" color="inherit">
         <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="open drawer" sx={{ mr: 2 }}>
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div" sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {import.meta.env.VITE_APP_NAME}
-          </Typography>
+          <Link to="/" style={{ display: 'flex', textDecoration: 'none', color: 'inherit' }}>
+            <Box component="img" src="/logo.svg" width={64} height={64} sx={{ height: 48, m: -1, mr: 0 }} />
+            <Typography variant="h6" noWrap component="div">
+              {import.meta.env.VITE_APP_NAME}
+            </Typography>
+          </Link>
 
           <SearchBox />
+
+          <Box sx={{ display: 'flex' }}>
+            <Button color="inherit" component={Link} to="/titles">
+              {t('Titles')}
+            </Button>
+            <Button color="inherit" component={Link} to="/series">
+              {t('Series')}
+            </Button>
+          </Box>
 
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>

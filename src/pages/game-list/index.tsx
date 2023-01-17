@@ -45,7 +45,12 @@ export default function GameList() {
           })}
         </Grid>
       )}
-      <Pagination page={page} count={data?.meta.lastPage} onChange={handlePageChange} />
+      <Pagination
+        page={page}
+        count={data?.meta.lastPage}
+        onChange={handlePageChange}
+        sx={{ mt: 3 }}
+      />
     </Container>
   );
 }

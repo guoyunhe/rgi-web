@@ -119,6 +119,9 @@ export default function Navbar() {
           <SearchBox />
 
           <Box sx={{ display: 'flex' }}>
+            <Button color="inherit" component={Link} to="/">
+              {t('Games')}
+            </Button>
             <Button color="inherit" component={Link} to="/titles">
               {t('Titles')}
             </Button>

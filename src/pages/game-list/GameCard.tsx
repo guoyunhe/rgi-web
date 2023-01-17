@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardMedia, Chip, Typography } from '@mui/material';
+import { Box, Card, CardContent, CardMedia, Chip, colors, Typography } from '@mui/material';
 import Game from '../../types/models/Game';
 
 export interface GameCardProps {
@@ -13,14 +13,22 @@ export default function GameCard({ game }: GameCardProps) {
         height={game.boxartImage?.height}
         width={game.boxartImage?.width}
         image={game.boxartImage?.url}
-        alt={game.name}
-        sx={{ width: 200, height: 200 }}
+        alt={game.boxartImage ? game.name : 'No Boxart Image'}
+        sx={{
+          width: 200,
+          height: 200,
+          backgroundColor: colors.grey[100],
+          color: colors.grey[500],
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
       />
       <CardContent sx={{ display: 'flex', flexDirection: 'column' }}>
         <Typography>{game.name}</Typography>
         <Typography sx={{ flex: '1 1 auto' }}></Typography>
-        <Box>
-          <Chip label={game.platform} />
+        <Box sx={{ display: 'flex', gap: 1 }}>
+          <Chip label={game.platform} color="secondary" />
           <Chip label={game.serial} variant="outlined" />
         </Box>
       </CardContent>

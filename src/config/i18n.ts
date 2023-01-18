@@ -12,12 +12,8 @@ export const languages = [
     name: 'Français',
   },
   {
-    code: 'zh-CN',
-    name: '简体中文',
-  },
-  {
-    code: 'zh-TW',
-    name: '繁体中文',
+    code: 'zh',
+    name: '中文',
   },
 ];
 

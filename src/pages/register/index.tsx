@@ -12,7 +12,7 @@ import axios from 'axios';
 import { FormEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Navigate, useLocation } from 'react-router-dom';
-import useAuth from '../../contexts/auth/useAuth';
+import useAuth from '../../components/auth/useAuth';
 import AuthStatus from '../../types/enums/AuthStatus';
 
 export default function Register() {

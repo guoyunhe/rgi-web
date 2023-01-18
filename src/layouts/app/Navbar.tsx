@@ -1,8 +1,8 @@
 import { AppBar, Box, Button, Divider, Toolbar, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import useAuth from '../../components/auth/useAuth';
 import LanguageMenu from '../../components/LanguageMenu';
-import useAuth from '../../contexts/auth/useAuth';
 import AuthStatus from '../../types/enums/AuthStatus';
 import SearchBox from './SearchBox';
 

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { ReactNode, useEffect, useState } from 'react';
 import AuthStatus from '../../types/enums/AuthStatus';
 import User from '../../types/models/User';
@@ -12,7 +13,12 @@ export default function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    // TODO: check auth status
+    axios.get<User | null>('/user').then((res) => {
+      if (res.data) {
+        setStatus(AuthStatus.LoggedIn);
+        setUser(res.data);
+      }
+    });
   }, []);
 
   return (

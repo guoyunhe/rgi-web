@@ -1,7 +1,6 @@
 import {
   AccountCircle,
   Mail as MailIcon,
-  MoreVert as MoreIcon,
   Notifications as NotificationsIcon,
 } from '@mui/icons-material';
 import {
@@ -9,6 +8,7 @@ import {
   Badge,
   Box,
   Button,
+  Divider,
   IconButton,
   Menu,
   MenuItem,
@@ -147,39 +147,20 @@ export default function Navbar() {
           </Box>
 
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+
+          <Box sx={{ display: 'flex' }}>
             <LanguageMenu />
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
+            <Divider orientation="vertical" />
+            <div>
+              <Button color="inherit" component={Link} to="/login">
+                {t('Login')}
+              </Button>
+            </div>
+            <div>
+              <Button color="inherit" component={Link} to="/register">
+                {t('Register')}
+              </Button>
+            </div>
           </Box>
         </Toolbar>
       </AppBar>

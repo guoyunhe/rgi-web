@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import useAuth from '../auth/useAuth';
+import useAuth from '../contexts/auth/useAuth';
 import Header from './Header';
 
 export default function Home() {

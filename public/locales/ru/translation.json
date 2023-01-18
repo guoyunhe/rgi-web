@@ -1,14 +1,14 @@
 {
-  "Games": "",
-  "Titles": "",
-  "Series": "",
-  "Logout": "",
-  "Login": "",
-  "Register": "",
-  "Search": "",
-  "No boxart image": "",
-  "Email": "",
-  "Password": "",
-  "Username": "",
-  "Password confirm": ""
+  "Games": "Игры",
+  "Titles": "Названия",
+  "Series": "Серия",
+  "Logout": "Выход",
+  "Login": "Логин",
+  "Register": "Регистрировать",
+  "Search": "Искать",
+  "No boxart image": "Нет изображения бокс-арта",
+  "Email": "Отправить по электронной почте",
+  "Password": "Пароль",
+  "Username": "Имя пользователя",
+  "Password confirm": "Подтверждение пароля"
 }

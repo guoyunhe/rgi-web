@@ -1,14 +1,14 @@
 {
-  "Games": "",
-  "Titles": "",
-  "Series": "",
-  "Logout": "",
-  "Login": "",
-  "Register": "",
-  "Search": "",
-  "No boxart image": "",
-  "Email": "",
-  "Password": "",
-  "Username": "",
-  "Password confirm": ""
+  "Games": "게임",
+  "Titles": "제목",
+  "Series": "시리즈",
+  "Logout": "로그아웃",
+  "Login": "로그인",
+  "Register": "등록기",
+  "Search": "검색",
+  "No boxart image": "박스 아트 이미지 없음",
+  "Email": "이메일",
+  "Password": "암호",
+  "Username": "사용자 이름",
+  "Password confirm": "비밀번호 확인"
 }

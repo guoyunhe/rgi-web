@@ -1,14 +1,14 @@
 {
-  "Games": "",
-  "Titles": "",
-  "Series": "",
-  "Logout": "",
-  "Login": "",
-  "Register": "",
-  "Search": "",
-  "No boxart image": "",
-  "Email": "",
-  "Password": "",
-  "Username": "",
-  "Password confirm": ""
+  "Games": "Games",
+  "Titles": "Titels",
+  "Series": "Reeks",
+  "Logout": "Logout",
+  "Login": "Inloggen",
+  "Register": "Registreren",
+  "Search": "Zoeken",
+  "No boxart image": "Geen boxart-afbeelding",
+  "Email": "E-mail",
+  "Password": "Wachtwoord",
+  "Username": "Gebruikersnaam",
+  "Password confirm": "Wachtwoord bevestigen"
 }

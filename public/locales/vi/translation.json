@@ -1,14 +1,14 @@
 {
-  "Games": "",
-  "Titles": "",
-  "Series": "",
-  "Logout": "",
-  "Login": "",
-  "Register": "",
-  "Search": "",
-  "No boxart image": "",
-  "Email": "",
-  "Password": "",
-  "Username": "",
-  "Password confirm": ""
+  "Games": "Trò chơi",
+  "Titles": "Tiêu đề",
+  "Series": "Loạt",
+  "Logout": "Đăng xuất",
+  "Login": "Đăng nhập",
+  "Register": "Đăng ký",
+  "Search": "Tìm kiếm",
+  "No boxart image": "Không có ảnh boxart",
+  "Email": "Email",
+  "Password": "Mật khẩu",
+  "Username": "Tên người dùng",
+  "Password confirm": "Xác nhận mật khẩu"
 }

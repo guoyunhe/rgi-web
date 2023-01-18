@@ -1,14 +1,14 @@
 {
-  "Games": "",
-  "Titles": "",
-  "Series": "",
-  "Logout": "",
-  "Login": "",
-  "Register": "",
-  "Search": "",
-  "No boxart image": "",
-  "Email": "",
-  "Password": "",
-  "Username": "",
-  "Password confirm": ""
+  "Games": "Pelit",
+  "Titles": "Otsikot",
+  "Series": "Sarja",
+  "Logout": "Uloskirjaus",
+  "Login": "Sisäänkirjautuminen",
+  "Register": "Rekisteröidy",
+  "Search": "Etsiä",
+  "No boxart image": "Ei boxart-kuvaa",
+  "Email": "Sähköposti",
+  "Password": "Salasana",
+  "Username": "Käyttäjänimi",
+  "Password confirm": "Salasanan vahvistus"
 }

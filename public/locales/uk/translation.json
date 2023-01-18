@@ -1,14 +1,14 @@
 {
-  "Games": "",
-  "Titles": "",
-  "Series": "",
-  "Logout": "",
-  "Login": "",
-  "Register": "",
-  "Search": "",
-  "No boxart image": "",
-  "Email": "",
-  "Password": "",
-  "Username": "",
-  "Password confirm": ""
+  "Games": "Ігри",
+  "Titles": "Назви",
+  "Series": "Ряд",
+  "Logout": "Вихід",
+  "Login": "Логін",
+  "Register": "Зареєструватися",
+  "Search": "Шукати",
+  "No boxart image": "Без зображення боксарту",
+  "Email": "Електронна пошта",
+  "Password": "Пароль",
+  "Username": "Ім'я користувача",
+  "Password confirm": "Підтвердження паролем"
 }

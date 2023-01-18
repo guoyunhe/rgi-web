@@ -1,14 +1,14 @@
 {
-  "Games": "",
-  "Titles": "",
+  "Games": "العاب",
+  "Titles": "القاب",
   "Series": "",
-  "Logout": "",
-  "Login": "",
-  "Register": "",
-  "Search": "",
-  "No boxart image": "",
-  "Email": "",
-  "Password": "",
-  "Username": "",
-  "Password confirm": ""
+  "Logout": "الخروج",
+  "Login": "تسجيل الدخول",
+  "Register": "سجل",
+  "Search": "بحث",
+  "No boxart image": "لا توجد صورة بوكسارت",
+  "Email": "البريد الإلكتروني",
+  "Password": "شعار",
+  "Username": "اسم المستخدم",
+  "Password confirm": "تأكيد كلمة المرور"
 }

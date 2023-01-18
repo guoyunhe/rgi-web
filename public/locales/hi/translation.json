@@ -1,14 +1,14 @@
 {
-  "Games": "",
-  "Titles": "",
-  "Series": "",
-  "Logout": "",
-  "Login": "",
-  "Register": "",
-  "Search": "",
-  "No boxart image": "",
-  "Email": "",
-  "Password": "",
-  "Username": "",
-  "Password confirm": ""
+  "Games": "गेम्स",
+  "Titles": "शीर्षक",
+  "Series": "शृंखला",
+  "Logout": "लॉगआउट",
+  "Login": "लॉगिन",
+  "Register": "पंजीकृत करें",
+  "Search": "ढूँढ",
+  "No boxart image": "कोई बॉक्सआर्ट छवि नहीं",
+  "Email": "ईमेल",
+  "Password": "पासवर्ड",
+  "Username": "उपयोगकर्ता नाम",
+  "Password confirm": "पासवर्ड की पुष्टि करें"
 }

@@ -1,14 +1,14 @@
 {
-  "Games": "",
-  "Titles": "",
-  "Series": "",
-  "Logout": "",
-  "Login": "",
-  "Register": "",
-  "Search": "",
-  "No boxart image": "",
-  "Email": "",
-  "Password": "",
-  "Username": "",
-  "Password confirm": ""
+  "Games": "Spel",
+  "Titles": "Titlar",
+  "Series": "Serie",
+  "Logout": "Utloggning",
+  "Login": "Logga in",
+  "Register": "Registrera dig",
+  "Search": "Söka",
+  "No boxart image": "Ingen boxart-bild",
+  "Email": "E-post",
+  "Password": "Lösenord",
+  "Username": "Användarnamn",
+  "Password confirm": "Bekräfta lösenord"
 }

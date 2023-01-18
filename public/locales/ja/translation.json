@@ -1,14 +1,14 @@
 {
-  "Games": "",
-  "Titles": "",
-  "Series": "",
-  "Logout": "",
-  "Login": "",
-  "Register": "",
-  "Search": "",
-  "No boxart image": "",
-  "Email": "",
-  "Password": "",
-  "Username": "",
-  "Password confirm": ""
+  "Games": "ゲーム",
+  "Titles": "タイトル",
+  "Series": "級数",
+  "Logout": "ログアウト",
+  "Login": "ログイン",
+  "Register": "登録する",
+  "Search": "捜索",
+  "No boxart image": "ボックスアート画像なし",
+  "Email": "電子メール",
+  "Password": "パスワード",
+  "Username": "ユーザー名",
+  "Password confirm": "パスワードの確認"
 }

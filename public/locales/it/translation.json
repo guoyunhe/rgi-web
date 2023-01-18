@@ -1,14 +1,14 @@
 {
-  "Games": "",
-  "Titles": "",
-  "Series": "",
-  "Logout": "",
-  "Login": "",
-  "Register": "",
-  "Search": "",
-  "No boxart image": "",
-  "Email": "",
-  "Password": "",
-  "Username": "",
-  "Password confirm": ""
+  "Games": "Giochi",
+  "Titles": "Titoli",
+  "Series": "Serie",
+  "Logout": "Logout",
+  "Login": "Accesso",
+  "Register": "Registro",
+  "Search": "Ricerca",
+  "No boxart image": "Nessuna immagine boxart",
+  "Email": "E-mail",
+  "Password": "Parola d’ordine",
+  "Username": "Nome utente",
+  "Password confirm": "Conferma password"
 }

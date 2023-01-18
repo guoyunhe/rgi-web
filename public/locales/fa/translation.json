@@ -1,14 +1,14 @@
 {
-  "Games": "",
-  "Titles": "",
-  "Series": "",
-  "Logout": "",
-  "Login": "",
-  "Register": "",
-  "Search": "",
-  "No boxart image": "",
-  "Email": "",
-  "Password": "",
-  "Username": "",
-  "Password confirm": ""
+  "Games": "بازی",
+  "Titles": "عنوان",
+  "Series": "سری",
+  "Logout": "خروج",
+  "Login": "ورود",
+  "Register": "ثبت",
+  "Search": "جستجو",
+  "No boxart image": "بدون تصویر boxart",
+  "Email": "ایمیل",
+  "Password": "رمز عبور",
+  "Username": "نام کاربری",
+  "Password confirm": "رمز عبور تایید"
 }

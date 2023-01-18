@@ -48,7 +48,7 @@ export const languages = [
     name: 'Dutch',
   },
   {
-    code: 'po',
+    code: 'pl',
     name: 'język polski',
   },
   {

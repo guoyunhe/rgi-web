@@ -3,12 +3,12 @@
   "Titles": "Titres",
   "Series": "Série",
   "Logout": "Déconnexion",
-  "Login": "Connexion",
-  "Register": "S'inscrire",
-  "Search": "Chercher",
-  "No boxart image": "Pas d'image boxart",
-  "Email": "Email",
+  "Login": "Connectez-vous",
+  "Register": "Registre",
+  "Search": "Rechercher",
+  "No boxart image": "Pas d’image boxart",
+  "Email": "Messagerie électronique",
   "Password": "Mot de passe",
-  "Username": "Nom d'utilisateur",
+  "Username": "Nom d’utilisateur",
   "Password confirm": "Confirmation du mot de passe"
 }

@@ -14,6 +14,7 @@ import { useTranslation } from 'react-i18next';
 import { Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../../contexts/auth/useAuth';
 import AuthStatus from '../../types/enums/AuthStatus';
+import User from '../../types/models/User';
 
 export default function Register() {
   const { t } = useTranslation();
@@ -23,13 +24,14 @@ export default function Register() {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordConfirm, setPasswordConfirm] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleRegister = (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
     axios
-      .post('/register', { email, username, password })
+      .post<User>('/register', { email, username, password, passwordConfirm })
       .then((res) => {
         if (res.data) {
           setStatus(AuthStatus.LoggedIn);
@@ -45,6 +47,7 @@ export default function Register() {
   };
 
   if (status === AuthStatus.LoggedIn) {
+    console.log(location.state?.from?.pathname);
     return <Navigate to={location.state?.from?.pathname || '/'} />;
   }
 
@@ -80,6 +83,17 @@ export default function Register() {
             label={t('Password')}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
+            size="small"
+            fullWidth
+            sx={{ mb: 3 }}
+          />
+          <TextField
+            type="password"
+            name="password"
+            label={t('Password confirm')}
+            value={passwordConfirm}
+            onChange={(e) => setPasswordConfirm(e.target.value)}
             required
             size="small"
             fullWidth

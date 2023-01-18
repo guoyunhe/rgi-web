@@ -17,6 +17,8 @@ export default function AuthProvider({ children }: AuthProviderProps) {
       if (res.data) {
         setStatus(AuthStatus.LoggedIn);
         setUser(res.data);
+      } else {
+        setStatus(AuthStatus.NotLoggedIn);
       }
     });
   }, []);

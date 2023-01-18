@@ -18,10 +18,9 @@ import AuthStatus from '../../types/enums/AuthStatus';
 export default function Login() {
   const { t } = useTranslation();
   const location = useLocation();
-  const { status, setStatus, setUser } = useAuth();
+  const { status, setStatus, setUser, setToken } = useAuth();
 
   const [email, setEmail] = useState('');
-  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -29,11 +28,13 @@ export default function Login() {
     e.preventDefault();
     setLoading(true);
     axios
-      .post('/login', { email, username, password })
+      .post('/login', { email, password })
       .then((res) => {
         if (res.data) {
+          const { token, user } = res.data;
           setStatus(AuthStatus.LoggedIn);
-          setUser(res.data);
+          setUser(user);
+          setToken(token.token);
         }
       })
       .catch((err) => {
@@ -54,10 +55,11 @@ export default function Login() {
         <CardHeader title={t('Login')} />
         <CardContent component="form" onSubmit={handleLogin}>
           <TextField
-            name="username"
-            label={t('Username')}
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            type="email"
+            name="email"
+            label={t('Email')}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
             size="small"
             fullWidth

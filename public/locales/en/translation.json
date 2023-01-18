@@ -5,5 +5,11 @@
   "Games": "Games",
   "Titles": "Titles",
   "Series": "Series",
-  "Search": "Search"
+  "Logout": "Logout",
+  "Search": "Search",
+  "No boxart image": "No boxart image",
+  "Email": "Email",
+  "Password": "Password",
+  "Username": "Username",
+  "Password confirm": "Password confirm"
 }

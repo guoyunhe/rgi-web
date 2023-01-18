@@ -14,12 +14,11 @@ import { useTranslation } from 'react-i18next';
 import { Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../../contexts/auth/useAuth';
 import AuthStatus from '../../types/enums/AuthStatus';
-import User from '../../types/models/User';
 
 export default function Register() {
   const { t } = useTranslation();
   const location = useLocation();
-  const { status, setStatus, setUser } = useAuth();
+  const { status, setStatus, setUser, setToken } = useAuth();
 
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
@@ -31,11 +30,13 @@ export default function Register() {
     e.preventDefault();
     setLoading(true);
     axios
-      .post<User>('/register', { email, username, password, passwordConfirm })
+      .post('/register', { email, username, password, passwordConfirm })
       .then((res) => {
         if (res.data) {
+          const { token, user } = res.data;
           setStatus(AuthStatus.LoggedIn);
-          setUser(res.data);
+          setUser(user);
+          setToken(token.token);
         }
       })
       .catch((err) => {

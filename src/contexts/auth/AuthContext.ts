@@ -7,6 +7,7 @@ export interface AuthContextValue {
   setStatus: (status: AuthStatus) => void;
   user: User | null;
   setUser: (user: User | null) => void;
+  setToken: (token: string) => void;
 }
 
 const AuthContext = createContext<AuthContextValue>({
@@ -14,6 +15,7 @@ const AuthContext = createContext<AuthContextValue>({
   setStatus: () => null,
   user: null,
   setUser: () => null,
+  setToken: () => null,
 });
 
 export default AuthContext;

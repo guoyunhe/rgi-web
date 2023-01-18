@@ -76,10 +76,10 @@ export default interface Game extends Model {
   platform: string;
 
   /** Like Japan, USA, Europe */
-  regions: string[] | null;
+  region: string | null;
 
   /** Like En, Fr, Pt */
-  languages: string[] | null;
+  language: string | null;
 
   /** Disc 1, Disc 2, etc. */
   disc: number;

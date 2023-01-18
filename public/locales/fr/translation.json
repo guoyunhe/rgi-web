@@ -1,15 +1,14 @@
 {
+  "Games": "Jeux",
+  "Titles": "Titres",
+  "Series": "Série",
+  "Logout": "Déconnexion",
   "Login": "Connexion",
   "Register": "S'inscrire",
-  "The Cool Bike App": "",
-  "Games": "",
-  "Titles": "",
-  "Series": "",
-  "Logout": "",
   "Search": "Chercher",
-  "No boxart image": "",
-  "Email": "",
-  "Password": "",
-  "Username": "",
-  "Password confirm": ""
+  "No boxart image": "Pas d'image boxart",
+  "Email": "Email",
+  "Password": "Mot de passe",
+  "Username": "Nom d'utilisateur",
+  "Password confirm": "Confirmation du mot de passe"
 }

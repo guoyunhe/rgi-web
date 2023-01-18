@@ -15,18 +15,19 @@ export default function AuthProvider({ children }: AuthProviderProps) {
   const [token, setToken] = useLocalStorage('api_token');
 
   useEffect(() => {
-    axios.get<User | null>('/user').then((res) => {
-      if (res.data) {
-        setStatus(AuthStatus.LoggedIn);
-        setUser(res.data);
-      } else {
-        setStatus(AuthStatus.NotLoggedIn);
-      }
-    });
-  }, []);
-
-  useEffect(() => {
-    axios.defaults.headers['Authorization'] = `Bearer ${token}`;
+    if (token) {
+      axios.defaults.headers['Authorization'] = `Bearer ${token}`;
+      axios.get<User | null>('/user').then((res) => {
+        if (res.data) {
+          setStatus(AuthStatus.LoggedIn);
+          setUser(res.data);
+        } else {
+          setStatus(AuthStatus.NotLoggedIn);
+        }
+      });
+    } else {
+      axios.defaults.headers['Authorization'] = '';
+    }
   }, [token]);
 
   return (

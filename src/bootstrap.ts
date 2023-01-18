@@ -42,4 +42,3 @@ i18n
   });
 
 axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL;
-axios.defaults.headers['Authorization'] = localStorage.getItem('api_token');

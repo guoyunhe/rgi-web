@@ -1,5 +1,6 @@
 import { ArrowRightAlt } from '@mui/icons-material';
 import {
+  Alert,
   Button,
   Card,
   CardContent,
@@ -22,6 +23,7 @@ export default function Login() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleLogin = (e: FormEvent) => {
@@ -30,15 +32,14 @@ export default function Login() {
     axios
       .post('/login', { email, password })
       .then((res) => {
-        if (res.data) {
-          const { token, user } = res.data;
-          setStatus(AuthStatus.LoggedIn);
-          setUser(user);
-          setToken(token.token);
-        }
+        const { token, user } = res.data;
+        setStatus(AuthStatus.LoggedIn);
+        setUser(user);
+        setToken(token.token);
+        setErrorMessage('');
       })
       .catch((err) => {
-        console.log(err.response.data);
+        setErrorMessage(err.response?.data || 'Network error');
       })
       .finally(() => {
         setLoading(false);
@@ -54,6 +55,11 @@ export default function Login() {
       <Card>
         <CardHeader title={t('Login')} />
         <CardContent component="form" onSubmit={handleLogin}>
+          {errorMessage && (
+            <Alert severity="error" sx={{ mb: 3 }}>
+              {errorMessage}
+            </Alert>
+          )}
           <TextField
             type="email"
             name="email"

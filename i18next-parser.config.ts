@@ -1,5 +1,5 @@
 // https://github.com/i18next/i18next-parser
-import bingTranslateApi from 'bing-translate-api';
+import { translate } from 'bing-translate-api';
 import { languageCodes } from './src/config/i18n';
 
 export default {
@@ -14,7 +14,8 @@ export default {
       return key;
     } else {
       try {
-        const result = await bingTranslateApi.translate(key, 'en', locale);
+        const bingLang = locale === 'zh' ? 'zh-Hans' : locale;
+        const result = await translate(key, 'en', bingLang);
         return result.translation;
       } catch (e) {
         console.log(e);

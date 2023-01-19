@@ -14,6 +14,7 @@ import { useTranslation } from 'react-i18next';
 import { Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../../components/auth/useAuth';
 import AuthStatus from '../../types/enums/AuthStatus';
+import ValidationError from '../../types/ValidationError';
 
 export default function Register() {
   const { t } = useTranslation();
@@ -25,6 +26,8 @@ export default function Register() {
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState<ValidationError[]>([]);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleRegister = (e: FormEvent) => {
     e.preventDefault();
@@ -40,7 +43,13 @@ export default function Register() {
         }
       })
       .catch((err) => {
-        console.log(err.response.data);
+        if (err.response?.data?.errors) {
+          setErrors(err.response.data.errors || []);
+          setErrorMessage('');
+        } else {
+          setErrorMessage(err.message);
+          setErrors([]);
+        }
       })
       .finally(() => {
         setLoading(false);
@@ -50,6 +59,13 @@ export default function Register() {
   if (status === AuthStatus.LoggedIn) {
     return <Navigate to={location.state?.from?.pathname || '/'} />;
   }
+
+  const emailErrorMessage = errors?.find((err) => err.field === 'email')?.message;
+  const usernameErrorMessage = errors?.find((err) => err.field === 'username')?.message;
+  const passwordErrorMessage = errors?.find((err) => err.field === 'password')?.message;
+  const passwordConfirmErrorMessage = errors?.find(
+    (err) => err.field === 'passwordConfirm'
+  )?.message;
 
   return (
     <Container maxWidth="xs" sx={{ py: 5 }}>
@@ -62,6 +78,8 @@ export default function Register() {
             label={t('Email')}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            error={!!emailErrorMessage}
+            helperText={emailErrorMessage}
             required
             size="small"
             fullWidth
@@ -72,6 +90,8 @@ export default function Register() {
             label={t('Username')}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            error={!!usernameErrorMessage}
+            helperText={usernameErrorMessage}
             required
             size="small"
             fullWidth
@@ -83,6 +103,8 @@ export default function Register() {
             label={t('Password')}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            error={!!passwordErrorMessage}
+            helperText={passwordErrorMessage}
             required
             size="small"
             fullWidth
@@ -94,6 +116,8 @@ export default function Register() {
             label={t('Password confirm')}
             value={passwordConfirm}
             onChange={(e) => setPasswordConfirm(e.target.value)}
+            error={!!passwordConfirmErrorMessage}
+            helperText={passwordConfirmErrorMessage}
             required
             size="small"
             fullWidth

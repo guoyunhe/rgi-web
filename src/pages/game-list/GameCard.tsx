@@ -7,6 +7,7 @@ export interface GameCardProps {
 }
 
 export default function GameCard({ game }: GameCardProps) {
+  const boxart = game.images?.find((img) => img.type === 'boxart');
   return (
     <Card
       component={Link}
@@ -15,10 +16,10 @@ export default function GameCard({ game }: GameCardProps) {
     >
       <CardMedia
         component="img"
-        height={game.boxartImage?.height}
-        width={game.boxartImage?.width}
-        image={game.boxartImage?.url}
-        alt={game.boxartImage ? game.name : 'No Boxart Image'}
+        height={boxart?.height}
+        width={boxart?.width}
+        image={boxart?.url}
+        alt={boxart ? game.name : 'No Boxart Image'}
         sx={{
           width: 200,
           height: 200,

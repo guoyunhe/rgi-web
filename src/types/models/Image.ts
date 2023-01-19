@@ -4,6 +4,9 @@ export default interface Image extends Model {
   /** User id of who uploaded the image */
   userId: number | null;
 
+  /** Usage type, like avatar, boxart, title, snap */
+  type: 'avatar' | 'boxart' | 'snap' | 'title';
+
   /** File storage path, images/<md5> */
   path: string;
 

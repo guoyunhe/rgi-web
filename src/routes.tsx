@@ -1,5 +1,6 @@
 import { RouteObject } from 'react-router-dom';
 import AppLayout from './layouts/app';
+import GameDetail from './pages/game-detail';
 import GameList from './pages/game-list';
 import Login from './pages/login';
 import NotFound from './pages/not-found';
@@ -14,6 +15,10 @@ const routes: RouteObject[] = [
       {
         index: true,
         element: <GameList />,
+      },
+      {
+        path: '/games/:gameId',
+        element: <GameDetail />,
       },
       {
         path: '/register',

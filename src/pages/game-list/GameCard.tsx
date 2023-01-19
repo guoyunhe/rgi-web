@@ -1,4 +1,5 @@
 import { Box, Card, CardContent, CardMedia, Chip, colors, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 import Game from '../../types/models/Game';
 
 export interface GameCardProps {
@@ -7,7 +8,11 @@ export interface GameCardProps {
 
 export default function GameCard({ game }: GameCardProps) {
   return (
-    <Card sx={{ display: 'flex', height: 200 }}>
+    <Card
+      component={Link}
+      to={'/games/' + game.id}
+      sx={{ display: 'flex', height: 200, textDecoration: 'none' }}
+    >
       <CardMedia
         component="img"
         height={game.boxartImage?.height}
@@ -19,6 +24,7 @@ export default function GameCard({ game }: GameCardProps) {
           height: 200,
           backgroundColor: colors.grey[100],
           color: colors.grey[500],
+          flex: '0 0 200px',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',

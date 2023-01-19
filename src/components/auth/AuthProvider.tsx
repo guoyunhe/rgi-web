@@ -17,14 +17,15 @@ export default function AuthProvider({ children }: AuthProviderProps) {
   useEffect(() => {
     if (token) {
       axios.defaults.headers['Authorization'] = `Bearer ${token}`;
-      axios.get<User | null>('/user').then((res) => {
-        if (res.data) {
+      axios
+        .get<User | null>('/user')
+        .then((res) => {
           setStatus(AuthStatus.LoggedIn);
           setUser(res.data);
-        } else {
+        })
+        .catch(() => {
           setStatus(AuthStatus.NotLoggedIn);
-        }
-      });
+        });
     } else {
       axios.defaults.headers['Authorization'] = '';
     }

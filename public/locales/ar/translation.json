@@ -1,7 +1,9 @@
 {
+  "Network error": "خطأ في الشبكة",
   "Games": "العاب",
   "Titles": "القاب",
   "Series": "سلسلة",
+  "Settings": "اعدادات",
   "Logout": "الخروج",
   "Login": "تسجيل الدخول",
   "Register": "سجل",

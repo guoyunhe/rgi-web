@@ -1,7 +1,9 @@
 {
+  "Network error": "Помилка мережі",
   "Games": "Ігри",
   "Titles": "Назви",
   "Series": "Ряд",
+  "Settings": "Параметри",
   "Logout": "Вихід",
   "Login": "Логін",
   "Register": "Зареєструватися",

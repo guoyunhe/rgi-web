@@ -1,7 +1,9 @@
 {
+  "Network error": "Błąd sieci",
   "Games": "Igrzyska",
   "Titles": "Tytuły",
   "Series": "Seria",
+  "Settings": "Ustawienia",
   "Logout": "Wyloguj",
   "Login": "Login",
   "Register": "Rejestrować",

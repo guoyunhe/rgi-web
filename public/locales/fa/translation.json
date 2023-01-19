@@ -1,7 +1,9 @@
 {
+  "Network error": "خطای شبکه",
   "Games": "بازی",
   "Titles": "عنوان",
   "Series": "سری",
+  "Settings": "تنظیمات",
   "Logout": "خروج",
   "Login": "ورود",
   "Register": "ثبت",

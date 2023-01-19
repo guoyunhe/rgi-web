@@ -1,7 +1,9 @@
 {
+  "Network error": "Netwerkfout",
   "Games": "Games",
   "Titles": "Titels",
   "Series": "Reeks",
+  "Settings": "Instellingen",
   "Logout": "Logout",
   "Login": "Inloggen",
   "Register": "Registreren",

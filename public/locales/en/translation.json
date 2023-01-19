@@ -1,7 +1,9 @@
 {
+  "Network error": "Network error",
   "Games": "Games",
   "Titles": "Titles",
   "Series": "Series",
+  "Settings": "Settings",
   "Logout": "Logout",
   "Login": "Login",
   "Register": "Register",

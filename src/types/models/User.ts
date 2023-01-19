@@ -1,6 +1,6 @@
 import Model from './Model';
 
 export default interface User extends Model {
-  name: number;
+  username: number;
   email: string;
 }

@@ -1,4 +1,6 @@
-import { AppBar, Box, Button, Divider, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Button, Divider, Snackbar, Toolbar, Typography } from '@mui/material';
+import axios from 'axios';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import useAuth from '../../components/auth/useAuth';
@@ -8,12 +10,20 @@ import SearchBox from './SearchBox';
 
 export default function Navbar() {
   const { t } = useTranslation();
-  const { status, setStatus, setUser, setToken } = useAuth();
+  const { setStatus, user, setUser, setToken } = useAuth();
+  const [logoutError, setLogoutError] = useState('');
 
   const handleLogout = () => {
-    setStatus(AuthStatus.LoggedOut);
-    setUser(null);
-    setToken('');
+    axios
+      .post('/logout')
+      .then(() => {
+        setStatus(AuthStatus.LoggedOut);
+        setUser(null);
+        setToken('');
+      })
+      .catch((err) => {
+        setLogoutError(err.response?.message || t('Network error'));
+      });
   };
 
   return (
@@ -52,8 +62,14 @@ export default function Navbar() {
           <Box sx={{ display: 'flex' }}>
             <LanguageMenu />
             <Divider orientation="vertical" />
-            {status === AuthStatus.LoggedIn ? (
+            {user ? (
               <div>
+                <Button color="inherit" component={Link} to={'/users/' + user.id}>
+                  {user.username}
+                </Button>
+                <Button color="inherit" component={Link} to="settings">
+                  {t('Settings')}
+                </Button>
                 <Button color="inherit" onClick={handleLogout}>
                   {t('Logout')}
                 </Button>
@@ -71,6 +87,15 @@ export default function Navbar() {
           </Box>
         </Toolbar>
       </AppBar>
+
+      <Snackbar
+        open={!!logoutError}
+        autoHideDuration={3000}
+        onClose={() => setLogoutError('')}
+        message={logoutError}
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        sx={{ mt: 8 }}
+      />
     </>
   );
 }

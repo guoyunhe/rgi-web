@@ -1,7 +1,9 @@
 {
+  "Network error": "Erreur réseau",
   "Games": "Jeux",
   "Titles": "Titres",
   "Series": "Série",
+  "Settings": "Paramètres",
   "Logout": "Déconnexion",
   "Login": "Connectez-vous",
   "Register": "Registre",

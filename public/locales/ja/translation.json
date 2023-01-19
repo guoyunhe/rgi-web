@@ -1,7 +1,9 @@
 {
+  "Network error": "ネットワークエラー",
   "Games": "ゲーム",
   "Titles": "タイトル",
   "Series": "級数",
+  "Settings": "設定",
   "Logout": "ログアウト",
   "Login": "ログイン",
   "Register": "登録する",

@@ -1,7 +1,9 @@
 {
+  "Network error": "Сетевая ошибка",
   "Games": "Игры",
   "Titles": "Названия",
   "Series": "Серия",
+  "Settings": "Параметры",
   "Logout": "Выход",
   "Login": "Логин",
   "Register": "Регистрировать",

@@ -1,7 +1,9 @@
 {
+  "Network error": "Verkkovirhe",
   "Games": "Pelit",
   "Titles": "Otsikot",
   "Series": "Sarja",
+  "Settings": "Asetukset",
   "Logout": "Uloskirjaus",
   "Login": "Sisäänkirjautuminen",
   "Register": "Rekisteröidy",

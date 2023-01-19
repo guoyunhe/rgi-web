@@ -1,5 +1,5 @@
 import { UploadFile } from '@mui/icons-material';
-import { Box, Button, colors, Container } from '@mui/material';
+import { Box, Button, colors, Container, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import ImageUploader from '../../components/images/ImageUploader';
 import Game from '../../types/models/Game';
@@ -21,7 +21,7 @@ export default function GameHeader({ game, updateGame }: GameHeaderProps) {
       }}
     >
       <Box sx={{ backdropFilter: 'blur(40px)' }}>
-        <Container maxWidth="xl" sx={{ py: 3 }}>
+        <Container maxWidth="xl" sx={{ py: 3, display: 'flex', gap: 3 }}>
           {game.boxartImage ? (
             <Box
               component="img"
@@ -53,6 +53,16 @@ export default function GameHeader({ game, updateGame }: GameHeaderProps) {
               </ImageUploader>
             </Box>
           )}
+          <Box sx={{ flex: '1 1 auto', color: '#fff', textShadow: '0 0 0.2em rgba(0,0,0,0.3)' }}>
+            <Typography variant="h3">{game.name}</Typography>
+            <Typography>
+              {t('Platform')}: {game.platform}
+            </Typography>
+            <Typography>
+              {t('Serial')}: {game.serial}
+            </Typography>
+            <Typography>{t('Release date')}: -</Typography>
+          </Box>
         </Container>
       </Box>
     </Box>

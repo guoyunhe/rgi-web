@@ -2,6 +2,7 @@ import { Box, SxProps } from '@mui/material';
 import axios from 'axios';
 import { ChangeEvent, ReactNode, useRef } from 'react';
 import Image from '../../types/models/Image';
+import { useCheckAuth } from '../auth/useCheckAuth';
 
 export interface ImageUploaderProps {
   type: Image['type'];
@@ -23,8 +24,11 @@ export default function ImageUploader({
   sx,
 }: ImageUploaderProps) {
   const inputRef = useRef<HTMLInputElement>(null);
+  const checkAuth = useCheckAuth();
   const handleClick = () => {
-    inputRef.current?.click();
+    if (checkAuth()) {
+      inputRef.current?.click();
+    }
   };
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const imageFile = e.target.files?.[0];

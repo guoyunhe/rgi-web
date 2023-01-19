@@ -3,7 +3,7 @@ import axios from 'axios';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { SWRConfig } from 'swr';
 import AuthProvider from './components/auth/AuthProvider';
-import LanguageEffect from './components/LanguageEffect';
+import LanguageEffect from './components/i18n/LanguageEffect';
 import routes from './routes';
 
 const router = createBrowserRouter(routes);

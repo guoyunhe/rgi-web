@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import useAuth from '../../components/auth/useAuth';
-import LanguageMenu from '../../components/LanguageMenu';
+import LanguageMenu from '../../components/i18n/LanguageMenu';
 import AuthStatus from '../../types/enums/AuthStatus';
 import SearchBox from './SearchBox';
 

@@ -1,13 +1,15 @@
 import { UploadFile } from '@mui/icons-material';
 import { Box, Button, colors, Container } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import ImageUploader from '../../components/images/ImageUploader';
 import Game from '../../types/models/Game';
 
 export interface GameHeaderProps {
   game: Game;
+  updateGame: (data: Partial<Game>) => void;
 }
 
-export default function GameHeader({ game }: GameHeaderProps) {
+export default function GameHeader({ game, updateGame }: GameHeaderProps) {
   const { t } = useTranslation();
   return (
     <Box
@@ -41,7 +43,14 @@ export default function GameHeader({ game }: GameHeaderProps) {
               }}
             >
               <Box sx={{ mb: 3 }}>{t('No boxart image')}</Box>
-              <Button startIcon={<UploadFile />}>{t('Upload')}</Button>
+              <ImageUploader
+                maxWidth={512}
+                onSucceed={(image) => {
+                  updateGame({ boxartImageId: image.id });
+                }}
+              >
+                <Button startIcon={<UploadFile />}>{t('Upload')}</Button>
+              </ImageUploader>
             </Box>
           )}
         </Container>

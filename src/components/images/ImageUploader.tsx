@@ -4,6 +4,7 @@ import { ChangeEvent, ReactNode, useRef } from 'react';
 import Image from '../../types/models/Image';
 
 export interface ImageUploaderProps {
+  type: Image['type'];
   maxWidth?: number;
   maxHeight?: number;
   onSucceed: (image: Image) => void;
@@ -13,6 +14,7 @@ export interface ImageUploaderProps {
 }
 
 export default function ImageUploader({
+  type,
   onSucceed,
   onFail,
   children,
@@ -30,8 +32,8 @@ export default function ImageUploader({
     const formData = new FormData();
     formData.append('imageFile', imageFile);
     formData.append('maxWidth', String(maxWidth));
-
     formData.append('maxHeight', String(maxHeight));
+    formData.append('type', type);
     axios
       .post<Image>('/images', formData)
       .then((res) => {

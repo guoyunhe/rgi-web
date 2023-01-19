@@ -6,15 +6,16 @@ import Game from '../../types/models/Game';
 
 export interface GameHeaderProps {
   game: Game;
-  updateGame: (data: Partial<Game>) => void;
+  updateGame: (data: Partial<Game> & { addImageId?: number }) => void;
 }
 
 export default function GameHeader({ game, updateGame }: GameHeaderProps) {
   const { t } = useTranslation();
+  const boxart = game.images?.find((img) => img.type === 'boxart');
   return (
     <Box
       sx={{
-        backgroundImage: `url(${game.boxartImage?.url || '/logo.svg'})`,
+        backgroundImage: `url(${boxart?.url || '/logo.svg'})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
         backgroundColor: colors.grey[300],
@@ -22,12 +23,12 @@ export default function GameHeader({ game, updateGame }: GameHeaderProps) {
     >
       <Box sx={{ backdropFilter: 'blur(40px)' }}>
         <Container maxWidth="xl" sx={{ py: 3, display: 'flex', gap: 3 }}>
-          {game.boxartImage ? (
+          {boxart ? (
             <Box
               component="img"
-              src={game.boxartImage.url}
-              width={game.boxartImage.width}
-              height={game.boxartImage.height}
+              src={boxart.url}
+              width={boxart.width}
+              height={boxart.height}
               sx={{ width: 300, height: 'auto' }}
             />
           ) : (
@@ -44,9 +45,10 @@ export default function GameHeader({ game, updateGame }: GameHeaderProps) {
             >
               <Box sx={{ mb: 3 }}>{t('No boxart image')}</Box>
               <ImageUploader
+                type="boxart"
                 maxWidth={512}
                 onSucceed={(image) => {
-                  updateGame({ boxartImageId: image.id });
+                  updateGame({ addImageId: image.id });
                 }}
               >
                 <Button startIcon={<UploadFile />}>{t('Upload')}</Button>

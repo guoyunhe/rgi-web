@@ -18,6 +18,7 @@ export default function GameDetail() {
   };
 
   if (!game) return null;
+
   return (
     <Box>
       <GameHeader game={game} updateGame={updateGame} />

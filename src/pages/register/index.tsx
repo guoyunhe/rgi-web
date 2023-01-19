@@ -48,7 +48,6 @@ export default function Register() {
   };
 
   if (status === AuthStatus.LoggedIn) {
-    console.log(location.state?.from?.pathname);
     return <Navigate to={location.state?.from?.pathname || '/'} />;
   }
 

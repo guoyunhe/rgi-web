@@ -63,7 +63,7 @@ export default function GameHeader({ game, updateGame }: GameHeaderProps) {
             <Typography>
               {t('Serial')}: {game.serial}
             </Typography>
-            <Typography>{t('Release date')}: -</Typography>
+            <Typography>{t('Release date')}: ????-??-??</Typography>
           </Box>
         </Container>
       </Box>

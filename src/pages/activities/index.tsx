@@ -1,4 +1,14 @@
-import { Box, Checkbox, Container, FormControlLabel, Pagination } from '@mui/material';
+import {
+  Box,
+  Container,
+  FormControl,
+  FormLabel,
+  MenuItem,
+  OutlinedInput,
+  Pagination,
+  Select,
+  SelectChangeEvent,
+} from '@mui/material';
 import { ChangeEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import useSWR from 'swr';
@@ -9,8 +19,9 @@ import ActivityRow from './ActivityRow';
 export default function ActivitiesPage() {
   const { t } = useTranslation();
   const [page, setPage] = useState(1);
-  const [noBoxartImage, setNoBoxartImage] = useState(false);
-  const { data } = useSWR<PaginatedResult<Activity>>(`/activities?page=${page}`, {
+  const [type, setType] = useState('');
+  const [userId, setUserId] = useState('');
+  const { data } = useSWR<PaginatedResult<Activity>>(`/activities?page=${page}&type=${type}`, {
     refreshInterval: 0,
   });
 
@@ -18,18 +29,37 @@ export default function ActivitiesPage() {
     setPage(value);
   };
 
-  const handleNoBoxartImageChange = (e: ChangeEvent<HTMLInputElement>, checked: boolean) => {
-    setNoBoxartImage(checked);
+  const handleTypeChange = (e: SelectChangeEvent<string>) => {
+    setType(e.target.value);
+    setPage(1);
+  };
+
+  const handleUserIdChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setUserId(e.target.value);
     setPage(1);
   };
 
   return (
-    <Container maxWidth="xl" sx={{ py: 3 }}>
-      <Box>
-        <FormControlLabel
-          control={<Checkbox checked={noBoxartImage} onChange={handleNoBoxartImageChange} />}
-          label={t('No boxart image')}
-        />
+    <Container maxWidth="lg" sx={{ py: 3 }}>
+      <Box sx={{ display: 'flex', gap: 2 }}>
+        <FormControl sx={{ flex: '1 1 20%' }}>
+          <FormLabel>{t('Type')} </FormLabel>
+          <Select value={type} onChange={handleTypeChange} size="small" sx={{ width: '100%' }}>
+            <MenuItem value="system">{t('System')}</MenuItem>
+            <MenuItem value="admin">{t('Admin')}</MenuItem>
+            <MenuItem value="user">{t('User')}</MenuItem>
+          </Select>
+        </FormControl>
+        <FormControl sx={{ flex: '1 1 20%' }}>
+          <FormLabel>{t('User ID')} </FormLabel>
+          <OutlinedInput
+            value={userId}
+            onChange={handleUserIdChange}
+            size="small"
+            sx={{ width: '100%' }}
+          />
+        </FormControl>
+        <Box sx={{ flex: '1 1 100%' }} />
       </Box>
       {data?.data.map((game) => {
         return <ActivityRow key={game.id} activity={game} />;

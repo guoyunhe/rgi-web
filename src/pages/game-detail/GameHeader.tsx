@@ -61,6 +61,12 @@ export default function GameHeader({ game, updateGame }: GameHeaderProps) {
               {t('Platform')}: {game.platform}
             </Typography>
             <Typography>
+              {t('Region')}: {game.region}
+            </Typography>
+            <Typography>
+              {t('Language')}: {game.language}
+            </Typography>
+            <Typography>
               {t('Serial')}: {game.serial}
             </Typography>
             <Typography>{t('Release date')}: ????-??-??</Typography>

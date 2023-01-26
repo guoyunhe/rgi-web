@@ -12,7 +12,7 @@ export default function GameList() {
   const [page, setPage] = useQueryParam('page', NumberParam);
   const [noBoxartImage, setNoBoxartImage] = useQueryParam('noBoxartImage', BooleanParam);
   const { data } = useSWR<PaginatedResult<Game>>(
-    `games?page=${page || 1}&noBoxartImage=${Number(noBoxartImage)}`,
+    `games?page=${page || 1}&noBoxartImage=${noBoxartImage ? 1 : 0}`,
     {
       refreshInterval: 0,
     }

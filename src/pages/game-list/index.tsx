@@ -1,17 +1,18 @@
 import { Box, Checkbox, Container, FormControlLabel, Grid, Pagination } from '@mui/material';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import useSWR from 'swr';
+import { BooleanParam, NumberParam, useQueryParam } from 'use-query-params';
 import Game from '../../types/models/Game';
 import PaginatedResult from '../../types/PaginatedResult';
 import GameCard from './GameCard';
 
 export default function GameList() {
   const { t } = useTranslation();
-  const [page, setPage] = useState(1);
-  const [noBoxartImage, setNoBoxartImage] = useState(false);
+  const [page, setPage] = useQueryParam('page', NumberParam);
+  const [noBoxartImage, setNoBoxartImage] = useQueryParam('noBoxartImage', BooleanParam);
   const { data } = useSWR<PaginatedResult<Game>>(
-    `games?page=${page}${noBoxartImage ? '&noBoxartImage=1' : ''}`,
+    `games?page=${page || 1}&noBoxartImage=${Number(noBoxartImage)}`,
     {
       refreshInterval: 0,
     }
@@ -30,7 +31,9 @@ export default function GameList() {
     <Container maxWidth="xl" sx={{ py: 3 }}>
       <Box>
         <FormControlLabel
-          control={<Checkbox checked={noBoxartImage} onChange={handleNoBoxartImageChange} />}
+          control={
+            <Checkbox checked={noBoxartImage || false} onChange={handleNoBoxartImageChange} />
+          }
           label={t('No boxart image')}
         />
       </Box>
@@ -46,7 +49,7 @@ export default function GameList() {
         </Grid>
       )}
       <Pagination
-        page={page}
+        page={page || 1}
         count={data?.meta.lastPage}
         onChange={handlePageChange}
         sx={{ mt: 3 }}

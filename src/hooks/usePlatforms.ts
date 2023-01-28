@@ -4,6 +4,10 @@ export default function usePlatforms() {
   return useMemo(
     () => [
       {
+        code: '3ds',
+        name: 'Nintendo 3DS',
+      },
+      {
         code: 'nes',
         name: 'Nintendo Entertainment System',
       },

@@ -1,5 +1,6 @@
 import Image from './Image';
 import Model from './Model';
+import Platform from './Platform';
 import Title from './Title';
 
 export default interface Game extends Model {
@@ -19,7 +20,10 @@ export default interface Game extends Model {
   name: string;
 
   /** Like GBA (GameBoy Advanced), PS2 (PlayStation 2), NS (Nintendo Switch) */
-  platform: string;
+  platformId: number;
+
+  /** Like GBA (GameBoy Advanced), PS2 (PlayStation 2), NS (Nintendo Switch) */
+  platform: Platform;
 
   /** Like Japan, USA, Europe */
   region: string | null;

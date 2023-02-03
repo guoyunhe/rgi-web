@@ -12,7 +12,7 @@ const routes: RouteObject[] = [
   {
     path: '/',
     element: (
-      <QueryParamProvider adapter={ReactRouter6Adapter}>
+      <QueryParamProvider adapter={ReactRouter6Adapter} options={{ enableBatching: true }}>
         <AppLayout />
       </QueryParamProvider>
     ),

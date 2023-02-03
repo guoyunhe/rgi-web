@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardMedia, Chip, colors, Typography } from '@mui/material';
+import { Card, CardContent, CardMedia, colors, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Game from '../../types/models/Game';
 
@@ -34,10 +34,6 @@ export default function GameCard({ game }: GameCardProps) {
       <CardContent sx={{ display: 'flex', flexDirection: 'column' }}>
         <Typography>{game.name}</Typography>
         <Typography sx={{ flex: '1 1 auto' }}></Typography>
-        <Box sx={{ display: 'flex', gap: 1 }}>
-          <Chip label={game.platform} color="secondary" />
-          <Chip label={game.serial} variant="outlined" />
-        </Box>
       </CardContent>
     </Card>
   );

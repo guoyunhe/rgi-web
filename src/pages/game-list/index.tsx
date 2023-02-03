@@ -48,7 +48,7 @@ export default function GameList() {
   return (
     <Container maxWidth="xl" sx={{ py: 3 }}>
       <Box sx={{ display: 'flex', gap: 2 }}>
-        <Select value={String(platform || 1)} onChange={handlePlatformChange}>
+        <Select value={String(platform || 1)} onChange={handlePlatformChange} size="small">
           {platforms.map((p) => (
             <MenuItem key={p.id} value={String(p.id)}>
               {p.name}

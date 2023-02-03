@@ -26,10 +26,7 @@ export default function GameList() {
   const { data } = useSWR<PaginatedResult<Game>>(
     `games?page=${page || 1}&platform=${platform || 1}&perPage=12&noBoxartImage=${
       noBoxartImage ? 1 : 0
-    }`,
-    {
-      refreshInterval: 0,
-    }
+    }`
   );
 
   const handlePageChange = (e: ChangeEvent<unknown>, value: number) => {

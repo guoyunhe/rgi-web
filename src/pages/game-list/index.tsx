@@ -12,20 +12,19 @@ import {
 import { ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import useSWR from 'swr';
-import { BooleanParam, NumberParam, StringParam, useQueryParam } from 'use-query-params';
-import usePlatforms from '../../hooks/usePlatforms';
+import { BooleanParam, NumberParam, useQueryParam } from 'use-query-params';
 import Game from '../../types/models/Game';
 import PaginatedResult from '../../types/PaginatedResult';
 import GameCard from './GameCard';
 
 export default function GameList() {
   const { t } = useTranslation();
-  const platforms = usePlatforms();
+  const { data: platforms = [] } = useSWR<any[]>('platforms');
   const [page, setPage] = useQueryParam('page', NumberParam);
-  const [platform, setPlatform] = useQueryParam('platform', StringParam);
+  const [platform, setPlatform] = useQueryParam('platform', NumberParam);
   const [noBoxartImage, setNoBoxartImage] = useQueryParam('noBoxartImage', BooleanParam);
   const { data } = useSWR<PaginatedResult<Game>>(
-    `games?page=${page || 1}&platform=${platform || 'psx'}&perPage=12&noBoxartImage=${
+    `games?page=${page || 1}&platform=${platform || 1}&perPage=12&noBoxartImage=${
       noBoxartImage ? 1 : 0
     }`,
     {
@@ -38,7 +37,7 @@ export default function GameList() {
   };
 
   const handlePlatformChange = (e: SelectChangeEvent<string>) => {
-    setPlatform(e.target.value);
+    setPlatform(Number(e.target.value));
   };
 
   const handleNoBoxartImageChange = (e: ChangeEvent<HTMLInputElement>, checked: boolean) => {
@@ -49,9 +48,9 @@ export default function GameList() {
   return (
     <Container maxWidth="xl" sx={{ py: 3 }}>
       <Box sx={{ display: 'flex', gap: 2 }}>
-        <Select value={platform || 'psx'} onChange={handlePlatformChange}>
+        <Select value={String(platform || 1)} onChange={handlePlatformChange}>
           {platforms.map((p) => (
-            <MenuItem key={p.code} value={p.code}>
+            <MenuItem key={p.id} value={String(p.id)}>
               {p.name}
             </MenuItem>
           ))}

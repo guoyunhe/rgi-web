@@ -8,7 +8,7 @@ import Game from '../../types/models/Game';
 
 export interface GameGalleryProps {
   game: Game;
-  updateGame: (data: Partial<Game> & { addImageId?: number }) => void;
+  updateGame: (data: Partial<Game> & { addImageId?: number; removeImageId?: number }) => void;
 }
 
 export default function GameGallery({ game, updateGame }: GameGalleryProps) {
@@ -31,7 +31,7 @@ export default function GameGallery({ game, updateGame }: GameGalleryProps) {
                 color="error"
                 onClick={async () => {
                   axios.delete('/images/' + image.id);
-                  updateGame({});
+                  updateGame({ removeImageId: image.id });
                 }}
                 sx={{ position: 'absolute', top: 10, right: 10 }}
               >

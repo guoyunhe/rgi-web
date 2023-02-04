@@ -21,9 +21,7 @@ export default function ActivitiesPage() {
   const [page, setPage] = useState(1);
   const [type, setType] = useState('');
   const [userId, setUserId] = useState('');
-  const { data } = useSWR<PaginatedResult<Activity>>(`/activities?page=${page}&type=${type}`, {
-    refreshInterval: 0,
-  });
+  const { data } = useSWR<PaginatedResult<Activity>>(`/activities?page=${page}&type=${type}`);
 
   const handlePageChange = (e: ChangeEvent<unknown>, value: number) => {
     setPage(value);

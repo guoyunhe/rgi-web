@@ -7,9 +7,7 @@ import GameHeader from './GameHeader';
 
 export default function GameDetail() {
   const { gameId } = useParams();
-  const { data: game, mutate } = useSWR<Game>(`/games/${gameId}`, {
-    refreshInterval: 0,
-  });
+  const { data: game, mutate } = useSWR<Game>(`/games/${gameId}`);
 
   const updateGame = (data: Partial<Game>) => {
     axios.put<Game>('/games/' + gameId, data).then((res) => {

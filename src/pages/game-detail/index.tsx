@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
 import Game from '../../types/models/Game';
+import GameGallery from './GameGallery';
 import GameHeader from './GameHeader';
 
 export default function GameDetail() {
@@ -20,6 +21,7 @@ export default function GameDetail() {
   return (
     <Box>
       <GameHeader game={game} updateGame={updateGame} />
+      <GameGallery game={game} updateGame={updateGame} />
     </Box>
   );
 }

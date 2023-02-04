@@ -21,11 +21,11 @@ export default function GameCard({ game }: GameCardProps) {
         image={boxart?.url}
         alt={boxart ? game.name : 'No Boxart Image'}
         sx={{
-          width: 200,
+          width: 'auto',
           height: 200,
           backgroundColor: colors.grey[100],
           color: colors.grey[500],
-          flex: '0 0 200px',
+          flex: '0 0 auto',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',

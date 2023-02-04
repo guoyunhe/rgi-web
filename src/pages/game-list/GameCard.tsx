@@ -32,7 +32,7 @@ export default function GameCard({ game }: GameCardProps) {
         }}
       />
       <CardContent sx={{ display: 'flex', flexDirection: 'column' }}>
-        <Typography>{game.name}</Typography>
+        <Typography>{game.displayName}</Typography>
         <Typography sx={{ flex: '1 1 auto' }}></Typography>
       </CardContent>
     </Card>

@@ -16,8 +16,11 @@ export default interface Game extends Model {
   /** Main game (Disc 1) that the game (Disc 2,3,...) belongs to */
   main: Game;
 
-  /** Name in English */
+  /** Original name from Redump/No-Intro */
   name: string;
+
+  /** Refined name for displaying in website */
+  displayName: string;
 
   /** Like GBA (GameBoy Advanced), PS2 (PlayStation 2), NS (Nintendo Switch) */
   platformId: number;

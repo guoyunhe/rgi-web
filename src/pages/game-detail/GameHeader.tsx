@@ -56,7 +56,8 @@ export default function GameHeader({ game, updateGame }: GameHeaderProps) {
             </Box>
           )}
           <Box sx={{ flex: '1 1 auto', color: '#fff', textShadow: '0 0 0.2em rgba(0,0,0,0.3)' }}>
-            <Typography variant="h3">{game.name}</Typography>
+            <Typography variant="h3">{game.displayName}</Typography>
+            <Typography>{game.name}</Typography>
             <Typography>
               {t('Platform')}: {game.platform.name}
             </Typography>

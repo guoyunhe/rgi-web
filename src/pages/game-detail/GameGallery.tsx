@@ -53,7 +53,7 @@ export default function GameGallery({ game, updateGame }: GameGalleryProps) {
         >
           <Box sx={{ mb: 3 }}>{t('No boxart image')}</Box>
           <ImageUploader
-            type="boxart"
+            category="boxart"
             maxWidth={512}
             onSucceed={(image) => {
               updateGame({ addImageId: image.id });

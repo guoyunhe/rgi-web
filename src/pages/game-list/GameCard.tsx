@@ -7,7 +7,7 @@ export interface GameCardProps {
 }
 
 export default function GameCard({ game }: GameCardProps) {
-  const boxart = game.images?.find((img) => img.type === 'boxart');
+  const boxart = game.images?.find((img) => img.category === 'boxart');
   return (
     <Card
       component={Link}

@@ -11,7 +11,7 @@ export interface GameHeaderProps {
 
 export default function GameHeader({ game, updateGame }: GameHeaderProps) {
   const { t } = useTranslation();
-  const boxart = game.images?.find((img) => img.type === 'boxart');
+  const boxart = game.images?.find((img) => img.category === 'boxart');
   return (
     <Box
       sx={{
@@ -45,7 +45,7 @@ export default function GameHeader({ game, updateGame }: GameHeaderProps) {
             >
               <Box sx={{ mb: 3 }}>{t('No boxart image')}</Box>
               <ImageUploader
-                type="boxart"
+                category="boxart"
                 maxWidth={512}
                 onSucceed={(image) => {
                   updateGame({ addImageId: image.id });

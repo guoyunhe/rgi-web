@@ -5,7 +5,7 @@ import Image from '../../types/models/Image';
 import { useCheckAuth } from '../auth/useCheckAuth';
 
 export interface ImageUploaderProps {
-  type: Image['type'];
+  category: Image['category'];
   maxWidth?: number;
   maxHeight?: number;
   onSucceed: (image: Image) => void;
@@ -15,12 +15,10 @@ export interface ImageUploaderProps {
 }
 
 export default function ImageUploader({
-  type,
+  category,
   onSucceed,
   onFail,
   children,
-  maxWidth = 1280,
-  maxHeight = 1280,
   sx,
 }: ImageUploaderProps) {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -35,9 +33,7 @@ export default function ImageUploader({
     if (!imageFile) return;
     const formData = new FormData();
     formData.append('imageFile', imageFile);
-    formData.append('maxWidth', String(maxWidth));
-    formData.append('maxHeight', String(maxHeight));
-    formData.append('type', type);
+    formData.append('category', category);
     axios
       .post<Image>('/images', formData)
       .then((res) => {

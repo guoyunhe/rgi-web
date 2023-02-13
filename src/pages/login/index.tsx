@@ -7,7 +7,8 @@ import {
   CardHeader,
   CircularProgress,
   Container,
-  TextField,
+  FormLabel,
+  OutlinedInput,
 } from '@mui/material';
 import axios from 'axios';
 import { FormEvent, useState } from 'react';
@@ -60,25 +61,23 @@ export default function Login() {
               {errorMessage}
             </Alert>
           )}
-          <TextField
+          <FormLabel>{t('Email')}</FormLabel>
+          <OutlinedInput
             type="email"
             name="email"
-            label={t('Email')}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            size="small"
             fullWidth
             sx={{ mb: 3 }}
           />
-          <TextField
+          <FormLabel>{t('Password')}</FormLabel>
+          <OutlinedInput
             type="password"
             name="password"
-            label={t('Password')}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            size="small"
             fullWidth
             sx={{ mb: 3 }}
           />

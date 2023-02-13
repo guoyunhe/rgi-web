@@ -8,6 +8,7 @@ import GameList from './pages/game-list';
 import Login from './pages/login';
 import NotFound from './pages/not-found';
 import Register from './pages/register';
+import SettingsPage from './pages/settings';
 const routes: RouteObject[] = [
   {
     path: '/',
@@ -37,6 +38,10 @@ const routes: RouteObject[] = [
       {
         path: '/login',
         element: <Login />,
+      },
+      {
+        path: '/settings',
+        element: <SettingsPage />,
       },
     ],
   },

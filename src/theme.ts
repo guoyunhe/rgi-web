@@ -15,6 +15,9 @@ const theme = createTheme({
         sizeSmall: {
           height: 30,
         },
+        outlined: {
+          fontWeight: 'normal',
+        },
       },
     },
     MuiOutlinedInput: {

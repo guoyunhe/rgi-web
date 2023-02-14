@@ -1,26 +1,51 @@
 import { createTheme } from '@mui/material';
 
 const theme = createTheme({
+  typography: {
+    fontSize: 14,
+    htmlFontSize: 16,
+  },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          height: 32,
           textTransform: 'none',
+          height: 36,
         },
         sizeSmall: {
-          height: 24,
+          height: 30,
         },
       },
     },
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
-          height: 32,
           verticalAlign: 'middle',
+          fontSize: 14,
+        },
+        input: {
+          paddingTop: 8,
+          paddingBottom: 8,
+          height: 20,
+        },
+        inputSizeSmall: {
+          paddingTop: 5,
+          paddingBottom: 5,
+          height: 20,
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          fontSize: 14,
+          transform: 'translate(14px, 8px) scale(1)',
+        },
+        shrink: {
+          transform: 'translate(14px, -8px) scale(0.8)',
         },
         sizeSmall: {
-          height: 24,
+          transform: 'translate(14px, 6px) scale(1)',
         },
       },
     },

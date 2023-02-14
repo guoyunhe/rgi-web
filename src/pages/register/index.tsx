@@ -81,7 +81,6 @@ export default function Register() {
             error={!!emailErrorMessage}
             helperText={emailErrorMessage}
             required
-            size="small"
             fullWidth
             sx={{ mb: 3 }}
           />
@@ -93,7 +92,6 @@ export default function Register() {
             error={!!usernameErrorMessage}
             helperText={usernameErrorMessage}
             required
-            size="small"
             fullWidth
             sx={{ mb: 3 }}
           />
@@ -106,7 +104,6 @@ export default function Register() {
             error={!!passwordErrorMessage}
             helperText={passwordErrorMessage}
             required
-            size="small"
             fullWidth
             sx={{ mb: 3 }}
           />
@@ -119,7 +116,6 @@ export default function Register() {
             error={!!passwordConfirmErrorMessage}
             helperText={passwordConfirmErrorMessage}
             required
-            size="small"
             fullWidth
             sx={{ mb: 3 }}
           />
